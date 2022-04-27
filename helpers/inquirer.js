@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 require("colors");
 
+// lista con las opciones del menú
 const menuQuestions = [
   {
     type: "list",
@@ -10,7 +11,7 @@ const menuQuestions = [
     choices: [
       {
         value: "1",
-        name: `${"1.".green} Dias de racha`,
+        name: `${"1.".green} Dias de racha actual`,
       },
       {
         value: "2",
@@ -26,15 +27,25 @@ const menuQuestions = [
 
 const inquirerMenu = async () => {
   console.clear();
-  console.log("=============================".green);
-  console.log("   Selecciona una opcion".white);
-  console.log("=============================".green);
+  console.log(
+    "=================================================================================="
+      .green
+  );
+  console.log(
+    "   Selecciona una opcion con las flechas (up/down) del teclado o los números"
+      .white
+  );
+  console.log(
+    "=================================================================================="
+      .green
+  );
 
   const { option } = await inquirer.prompt(menuQuestions);
 
   return option;
 };
 
+// para que no continue la ejecución y el usuario pueda visualizar el contenido actual
 const pauseQuestions = [
   {
     type: "input",

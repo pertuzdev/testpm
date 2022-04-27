@@ -1,5 +1,6 @@
 const axios = require("axios");
 
+// llamado a la API
 const meditationSessions = async () => {
   try {
     const instance = axios.create({
