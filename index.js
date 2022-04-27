@@ -24,8 +24,6 @@ const main = async () => {
     }
 
     await pause();
-    //console.log(opt, "option");
-    //if (opt !== "0") await pause();
   } while (opt !== "0");
 };
 
