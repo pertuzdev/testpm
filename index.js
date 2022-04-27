@@ -1,6 +1,10 @@
 const { inquirerMenu, pause } = require("./helpers/inquirer");
+const { meditationSessions } = require("./services/meditationSessions");
+const User = require("./models/User");
 
 console.clear();
+
+const user = new User();
 
 const main = async () => {
   let opt = "";
@@ -10,6 +14,7 @@ const main = async () => {
 
     switch (opt) {
       case "1":
+        await meditationSessions();
         console.log("Dias de racha");
         break;
 
