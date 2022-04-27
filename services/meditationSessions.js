@@ -9,9 +9,9 @@ const meditationSessions = async () => {
     });
     const response = await instance.get();
 
-    console.log(response.data[0], "response");
+    //console.log(response.data[0], "response");
 
-    //return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
     return [];

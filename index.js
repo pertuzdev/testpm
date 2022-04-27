@@ -1,5 +1,5 @@
 const { inquirerMenu, pause } = require("./helpers/inquirer");
-const { meditationSessions } = require("./services/meditationSessions");
+
 const User = require("./models/User");
 
 console.clear();
@@ -14,12 +14,12 @@ const main = async () => {
 
     switch (opt) {
       case "1":
-        await meditationSessions();
-        console.log("Dias de racha");
+        const streakDays = await user.getStreakDays();
+        console.log(`Tu racha actual es de ${streakDays} días`);
         break;
 
       case "2":
-        console.log("Calcular racha");
+        console.log("Calcular racha máxima");
         break;
     }
 
